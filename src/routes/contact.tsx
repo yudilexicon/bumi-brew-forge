@@ -5,7 +5,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Bumi Kopi" },
-      { name: "description", content: "Direct contact for sample requests, FCL contracts, and processing enquiries. Cikajang, Garut, West Java." },
+      { name: "description", content: "Direct contact for sample requests, FCL contracts, and processing enquiries. Bandung, West Java." },
     ],
   }),
   component: Contact,
@@ -43,7 +43,7 @@ function Contact() {
           <p className="mt-4 text-ash">
             PT Bumi Kopi Indonesia<br/>
             Jl. Cikajang–Pameungpeuk Km 4<br/>
-            Cikajang, Garut Regency 44171<br/>
+            Bandung Regency 44171<br/>
             West Java, Indonesia
           </p>
           <p className="mt-6 font-mono text-xs text-smoke">−7.3789° S · 107.7944° E</p>

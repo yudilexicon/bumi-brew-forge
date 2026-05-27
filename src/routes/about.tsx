@@ -5,7 +5,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Bumi Kopi" },
-      { name: "description", content: "B2B green coffee processor and exporter based in Cikajang, Garut. Owned washing station, direct farm-gate contracts, no broker chain." },
+      { name: "description", content: "B2B green coffee processor and exporter based in Bandung. Owned washing station, direct farm-gate contracts, no broker chain." },
     ],
   }),
   component: About,
@@ -23,7 +23,7 @@ function About() {
         { k: "Founded", v: "2018" },
         { k: "Staff", v: "11 permanent · 60 seasonal" },
         { k: "Container output 2025", v: "28 FCL" },
-        { k: "2026 target", v: "40 FCL · $1M ARR" },
+        { k: "2026 target", v: "25 FCL · $1M ARR" },
       ]} />
 
       <section className="container-x py-20 grid lg:grid-cols-12 gap-12">
@@ -63,8 +63,8 @@ function About() {
         <dl className="spec-grid mt-10 max-w-2xl">
           <dt>Shipping</dt><dd>FOB Tanjung Priok · Incoterms 2020</dd>
           <dt>Payment</dt><dd>LC at sight or 30% TT deposit</dd>
-          <dt>Packaging</dt><dd>GrainPro inside jute · 60 kg or 69 kg</dd>
-          <dt>Min order</dt><dd>69 kg (specialty) · 1 FCL (commercial)</dd>
+          <dt>Packaging</dt><dd>GrainPro inside jute · 60 kg</dd>
+          <dt>Min order</dt><dd>60 kg (specialty) · 1 FCL (commercial)</dd>
           <dt>Lead time</dt><dd>21 days from contract to vessel</dd>
           <dt>Off-spec policy</dt><dd>Replaced next shipment at no cost</dd>
         </dl>
