@@ -19,7 +19,7 @@ function Invest() {
       <PageHeader
         eyebrow="Capital · PT Bumi Kopi Indonesia"
         title="Equity participation in a vertically integrated processor."
-        intro="We own the washing station. We hold exclusive export rights on four origins. We are raising growth capital to expand drying capacity, extend farm-gate contracts, and accelerate buyer acquisition toward $1M ARR within 12 months."
+        lede="We own the washing station. We hold exclusive export rights on four origins. We are raising growth capital to expand drying capacity, extend farm-gate contracts, and accelerate buyer acquisition toward $1M ARR within 12 months."
       />
 
       <DataRow items={[
