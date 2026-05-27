@@ -33,6 +33,17 @@ export function SiteFooter() {
             <li><a href="mailto:hello@bumi-kopi.com" className="text-ash hover:text-rust">hello@bumi-kopi.com</a></li>
           </ul>
         </div>
+        <div className="md:col-span-4 border-t border-border pt-8 mt-2 grid md:grid-cols-12 gap-6 items-center">
+          <div className="md:col-span-7">
+            <p className="eyebrow text-rust mb-3">Capital · PT Bumi Kopi Indonesia</p>
+            <p className="font-display text-2xl text-bone leading-tight">Equity round open. $1M ARR target within 12 months.</p>
+            <p className="mt-3 text-sm text-smoke max-w-xl">Direct equity in a vertically integrated Indonesian processor. Drying capacity, farm-gate contracts, working capital. NDA required for data room.</p>
+          </div>
+          <div className="md:col-span-5 flex flex-col md:items-end gap-2">
+            <Link to="/invest" className="btn-primary">Invest in Bumi Kopi →</Link>
+            <a href="mailto:invest@bumi-kopi.com" className="font-mono text-[11px] uppercase tracking-[0.14em] text-smoke">invest@bumi-kopi.com</a>
+          </div>
+        </div>
       </div>
       <div className="border-t border-border">
         <div className="container-x py-5 flex flex-col md:flex-row justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-smoke">
