@@ -1,0 +1,45 @@
+import { Link } from "@tanstack/react-router";
+
+export function SiteFooter() {
+  return (
+    <footer className="border-t border-border bg-coal mt-24">
+      <div className="container-x py-16 grid md:grid-cols-4 gap-10">
+        <div className="md:col-span-2">
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-8 bg-rust flex items-center justify-center text-white font-mono text-xs">BK</span>
+            <span className="font-display font-bold text-xl text-bone">Bumi Kopi</span>
+          </div>
+          <p className="mt-4 text-sm text-smoke max-w-md">B2B green coffee processing and export. We process, grade, and export. No broker in the chain.</p>
+          <div className="mt-6 spec-grid max-w-xs">
+            <dt>HQ</dt><dd>Cikajang, Garut</dd>
+            <dt>Region</dt><dd>West Java, ID</dd>
+            <dt>Capacity</dt><dd>40 FCL / yr</dd>
+            <dt>Min order</dt><dd>69 kg / GrainPro</dd>
+          </div>
+        </div>
+        <div>
+          <p className="eyebrow mb-4">Operations</p>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/origins" className="text-ash hover:text-rust">Origins</Link></li>
+            <li><Link to="/processing" className="text-ash hover:text-rust">Processing</Link></li>
+            <li><Link to="/catalogue" className="text-ash hover:text-rust">Catalogue</Link></li>
+          </ul>
+        </div>
+        <div>
+          <p className="eyebrow mb-4">Trade</p>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/request-sample" className="text-ash hover:text-rust">Request sample</Link></li>
+            <li><Link to="/contact" className="text-ash hover:text-rust">Contact</Link></li>
+            <li><a href="mailto:hello@bumi-kopi.com" className="text-ash hover:text-rust">hello@bumi-kopi.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-border">
+        <div className="container-x py-5 flex flex-col md:flex-row justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-smoke">
+          <span>© {new Date().getFullYear()} PT Bumi Kopi Indonesia</span>
+          <span>FOB Tanjung Priok · Incoterms 2020 · ICO 0140</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
