@@ -34,7 +34,7 @@ function Home() {
             We own the washing station in Cikajang. We control every variable from fermentation to parchment moisture. No broker in the chain.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link to="/request-sample" className="btn-primary">Request 5kg cupping sample →</Link>
+            <Link to="/request-sample" className="btn-primary">Request up to 1kg cupping sample →</Link>
             <Link to="/catalogue" className="btn-ghost">View current lots</Link>
           </div>
           <div className="mt-14 max-w-3xl">
@@ -49,7 +49,7 @@ function Home() {
       <DataRow items={[
         { k: "Active origins", v: "4 exclusive" },
         { k: "Processing methods", v: "6" },
-        { k: "Annual capacity", v: "40 FCL" },
+        { k: "Annual capacity", v: "25 FCL" },
         { k: "Cup score range", v: "82.0 – 88.5" },
       ]} />
 
@@ -59,13 +59,13 @@ function Home() {
           <div className="lg:col-span-5">
             <p className="eyebrow text-rust">The offer</p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl text-bone leading-tight">Zero-risk first shipment.</h2>
-            <p className="mt-5 text-ash">5kg cupping sample within 10 business days. No invoice until you approve. Off-spec delivery — replaced in the next shipment at no cost.</p>
+            <p className="mt-5 text-ash">Up to 1kg cupping sample within 10 business days. No invoice until you approve. Off-spec delivery — replaced in the next shipment at no cost.</p>
             <Link to="/request-sample" className="btn-primary mt-8">Start with a sample →</Link>
           </div>
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
             {[
               { n: "01", t: "Enquiry", d: "Send origin, method, target screen, and volume. Reply within 1 business day." },
-              { n: "02", t: "Sample shipped", d: "5kg GrainPro, DHL, full lot documentation. 10 business days to your door." },
+              { n: "02", t: "Sample shipped", d: "Up to 1kg GrainPro, DHL, full lot documentation. 10 business days to your door." },
               { n: "03", t: "Cup & confirm", d: "You cup the sample. Decision within 3 business days. No commitment." },
               { n: "04", t: "FCL contract", d: "FOB Tanjung Priok. LC at sight or 30% TT deposit. Off-spec replaced." },
             ].map((s) => (
@@ -87,7 +87,7 @@ function Home() {
             <h3 className="mt-4 font-display text-3xl text-bone">Blend-grade. Volume. Reliable.</h3>
             <p className="mt-4 text-ash">For commercial roasters and importers buying full containers. Consistent moisture, defect counts, screen sorting.</p>
             <dl className="spec-grid mt-8">
-              <dt>Price band</dt><dd>$8 – 10 / kg FOB</dd>
+              <dt>Price band</dt><dd>$8 – 10 / kg Ex or FOB</dd>
               <dt>Lot size</dt><dd>1 FCL min (19,200 kg)</dd>
               <dt>Cup score</dt><dd>82 – 84</dd>
               <dt>Processing</dt><dd>Washed · Natural</dd>
@@ -98,8 +98,8 @@ function Home() {
             <h3 className="mt-4 font-display text-3xl text-bone">Traceable. High-score. Documented.</h3>
             <p className="mt-4 text-ash">For specialty roasters and competition buyers. Single-origin, micro-lot, full cupping protocols.</p>
             <dl className="spec-grid mt-8">
-              <dt>Price band</dt><dd>$11 – 28 / kg FOB</dd>
-              <dt>Lot size</dt><dd>69 kg GrainPro min</dd>
+              <dt>Price band</dt><dd>$11 – 28 / kg Ex or FOB</dd>
+              <dt>Lot size</dt><dd>60 kg GrainPro min</dd>
               <dt>Cup score</dt><dd>85 – 88.5</dd>
               <dt>Processing</dt><dd>Washed · Honey · Natural · Anaerobic · Infused · Own IP</dd>
             </dl>
@@ -166,7 +166,7 @@ function Home() {
         </div>
         <div className="relative container-x py-24 text-center">
           <p className="eyebrow text-rust">Next step</p>
-          <h2 className="mt-4 font-display text-4xl md:text-6xl text-bone max-w-3xl mx-auto">5kg sample. 10 business days. No invoice.</h2>
+          <h2 className="mt-4 font-display text-4xl md:text-6xl text-bone max-w-3xl mx-auto">Up to 1kg sample. 10 business days. No invoice.</h2>
           <p className="mt-5 text-ash max-w-xl mx-auto">You cup it before you commit. If it does not perform, no obligation.</p>
           <Link to="/request-sample" className="btn-primary mt-10">Request your sample →</Link>
         </div>

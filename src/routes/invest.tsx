@@ -5,7 +5,7 @@ export const Route = createFileRoute("/invest")({
   head: () => ({
     meta: [
       { title: "Invest — Bumi Kopi | Indonesian green coffee export" },
-      { name: "description", content: "Equity participation in PT Bumi Kopi Indonesia. Vertically integrated green coffee processing and export. Target $1M ARR within 12 months." },
+      { name: "description", content: "Equity participation in PT Bumi Kopi Indonesia. Vertically integrated green coffee processing and export. Target $1M ARR within 24 months." },
       { property: "og:title", content: "Invest in Bumi Kopi — Processing House Equity" },
       { property: "og:description", content: "Direct equity in a vertically integrated Indonesian green coffee processor. FOB Tanjung Priok. 22-account model. $1M ARR target." },
     ],
@@ -17,14 +17,14 @@ function Invest() {
   return (
     <>
       <PageHeader
-        eyebrow="Capital · PT Bumi Kopi Indonesia"
+        eyebrow="Capital Investment · Bumi Kopi"
         title="Equity participation in a vertically integrated processor."
-        lede="We own the washing station. We hold exclusive export rights on four origins. We are raising growth capital to expand drying capacity, extend farm-gate contracts, and accelerate buyer acquisition toward $1M ARR within 12 months."
+        lede="We own the washing station. We hold exclusive export rights on four origins. We are raising growth capital to expand drying capacity, extend farm-gate contracts, and accelerate buyer acquisition toward $1M ARR within 24 months."
       />
 
       <DataRow items={[
         { k: "Round", v: "Seed · Series A bridge" },
-        { k: "Target ARR (12 mo)", v: "$1,003,000" },
+        { k: "Target ARR (24 mo)", v: "$1,003,000" },
         { k: "Accounts (12 mo)", v: "22" },
         { k: "Min ticket", v: "$25,000 USD" },
       ]} />
@@ -112,9 +112,9 @@ function Invest() {
             <p className="mt-5 text-ash max-w-xl">Financial model, processing capacity audit, farm-gate contract register, exclusive origin agreements, Q-grade history, and existing buyer references. NDA required.</p>
           </div>
           <div className="lg:col-span-5 flex flex-col gap-3">
-            <a href="mailto:invest@bumi-kopi.com?subject=Bumi%20Kopi%20·%20Data%20room%20request" className="btn-primary justify-center">Request data room →</a>
+            <a href="mailto:hello@bumi-kopi.com?subject=Bumi%20Kopi%20·%20Data%20room%20request" className="btn-primary justify-center">Request data room →</a>
             <Link to="/contact" className="btn-ghost justify-center">Speak with the founders</Link>
-            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-smoke text-center mt-2">invest@bumi-kopi.com</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-smoke text-center mt-2">hello@bumi-kopi.com</p>
           </div>
         </div>
       </section>

@@ -26,7 +26,7 @@ export function SiteHeader() {
               {n.label}
             </Link>
           ))}
-          <Link to="/request-sample" className="btn-primary">Request 5kg sample →</Link>
+          <Link to="/request-sample" className="btn-primary">Request up to 1kg sample →</Link>
         </nav>
         <button onClick={() => setOpen(!open)} className="md:hidden font-mono text-xs uppercase text-bone">{open ? "Close" : "Menu"}</button>
       </div>

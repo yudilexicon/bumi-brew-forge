@@ -5,8 +5,8 @@ import { useState } from "react";
 export const Route = createFileRoute("/request-sample")({
   head: () => ({
     meta: [
-      { title: "Request a 5kg cupping sample — Bumi Kopi" },
-      { name: "description", content: "Zero-risk first shipment. 5kg sample within 10 business days. No invoice until you approve." },
+      { title: "Request a up to 1kg cupping sample — Bumi Kopi" },
+      { name: "description", content: "Zero-risk first shipment. Up to 1kg sample within 10 business days. No invoice until you approve." },
     ],
   }),
   component: RequestSample,
@@ -18,7 +18,7 @@ function RequestSample() {
     <>
       <PageHeader
         eyebrow="Bumi Kopi · Sample request"
-        title="5kg cupping sample. 10 business days. No invoice."
+        title="Up to 1kg sample. 10 business days. No invoice."
         lede="Fill the form. Operations will reply within 1 business day with shipping confirmation and lot documentation."
       />
       <section className="container-x py-16 grid lg:grid-cols-12 gap-12">
@@ -60,7 +60,7 @@ function RequestSample() {
             <h3 className="mt-3 font-display text-2xl text-bone">Zero-risk first shipment</h3>
             <ul className="mt-4 space-y-3 text-sm">
               {[
-                "5kg sample, GrainPro, DHL",
+                "Up to 1kg sample, GrainPro, DHL",
                 "Cupping report + moisture certificate",
                 "10 business days door-to-door",
                 "No invoice until you approve",
@@ -74,7 +74,7 @@ function RequestSample() {
             <p className="eyebrow">Operations contact</p>
             <p className="mt-3 font-mono text-bone">hello@bumi-kopi.com</p>
             <p className="font-mono text-smoke text-sm mt-1">+62 821 1500 0140</p>
-            <p className="mt-4 text-sm text-ash">Cikajang, Garut · West Java · 44171 · Indonesia</p>
+            <p className="mt-4 text-sm text-ash">Bandung · West Java · Indonesia</p>
           </div>
         </aside>
       </section>
