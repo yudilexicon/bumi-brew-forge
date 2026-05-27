@@ -13,6 +13,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RequestSampleRouteImport } from './routes/request-sample'
 import { Route as ProcessingRouteImport } from './routes/processing'
 import { Route as OriginsRouteImport } from './routes/origins'
+import { Route as InvestRouteImport } from './routes/invest'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CatalogueRouteImport } from './routes/catalogue'
 import { Route as AboutRouteImport } from './routes/about'
@@ -36,6 +37,11 @@ const ProcessingRoute = ProcessingRouteImport.update({
 const OriginsRoute = OriginsRouteImport.update({
   id: '/origins',
   path: '/origins',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestRoute = InvestRouteImport.update({
+  id: '/invest',
+  path: '/invest',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/catalogue': typeof CatalogueRoute
   '/contact': typeof ContactRoute
+  '/invest': typeof InvestRoute
   '/origins': typeof OriginsRoute
   '/processing': typeof ProcessingRoute
   '/request-sample': typeof RequestSampleRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/catalogue': typeof CatalogueRoute
   '/contact': typeof ContactRoute
+  '/invest': typeof InvestRoute
   '/origins': typeof OriginsRoute
   '/processing': typeof ProcessingRoute
   '/request-sample': typeof RequestSampleRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/catalogue': typeof CatalogueRoute
   '/contact': typeof ContactRoute
+  '/invest': typeof InvestRoute
   '/origins': typeof OriginsRoute
   '/processing': typeof ProcessingRoute
   '/request-sample': typeof RequestSampleRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/catalogue'
     | '/contact'
+    | '/invest'
     | '/origins'
     | '/processing'
     | '/request-sample'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/catalogue'
     | '/contact'
+    | '/invest'
     | '/origins'
     | '/processing'
     | '/request-sample'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/catalogue'
     | '/contact'
+    | '/invest'
     | '/origins'
     | '/processing'
     | '/request-sample'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CatalogueRoute: typeof CatalogueRoute
   ContactRoute: typeof ContactRoute
+  InvestRoute: typeof InvestRoute
   OriginsRoute: typeof OriginsRoute
   ProcessingRoute: typeof ProcessingRoute
   RequestSampleRoute: typeof RequestSampleRoute
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/origins'
       fullPath: '/origins'
       preLoaderRoute: typeof OriginsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/invest': {
+      id: '/invest'
+      path: '/invest'
+      fullPath: '/invest'
+      preLoaderRoute: typeof InvestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CatalogueRoute: CatalogueRoute,
   ContactRoute: ContactRoute,
+  InvestRoute: InvestRoute,
   OriginsRoute: OriginsRoute,
   ProcessingRoute: ProcessingRoute,
   RequestSampleRoute: RequestSampleRoute,
