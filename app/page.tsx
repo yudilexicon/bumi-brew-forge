@@ -64,9 +64,9 @@ export default function Home() {
             <h1 className="font-[family-name:var(--font-display)] font-extrabold text-5xl md:text-7xl lg:text-8xl text-[#faf8f4] leading-[0.92] tracking-tight uppercase mb-8 max-w-4xl">
               <SplitWords as="span" className="block">{"Indonesian"}</SplitWords>
               <SplitWords as="span" className="block" delay={0.1}>{"green beans."}</SplitWords>
-              <SplitWords as="span" className="block" delay={0.25} highlight="processed">{"Processed in-house."}</SplitWords>
-              <SplitWords as="span" className="block" delay={0.5} highlight="in-house.">{"Processed in-house."}</SplitWords>
-              <SplitWords as="span" className="block" delay={0.7}>{"Ready to ship."}</SplitWords>
+              <SplitWords as="span" className="block" delay={0.25} highlight="processed">{"Processed"}</SplitWords>
+              <SplitWords as="span" className="block" delay={0.4} highlight="in-house.">{"in-house."}</SplitWords>
+              <SplitWords as="span" className="block" delay={0.55}>{"Ready to ship."}</SplitWords>
             </h1>
             <Reveal delay={0.6}>
               <p className="font-[family-name:var(--font-body)] text-lg text-[#c4bdb0] max-w-xl mb-10 leading-relaxed font-light">
