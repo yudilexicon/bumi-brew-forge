@@ -1,5 +1,8 @@
 import { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://bumi-kopi.com";
   const pages = ["/", "/origins", "/processing", "/catalogue", "/about", "/request-sample", "/contact"];
