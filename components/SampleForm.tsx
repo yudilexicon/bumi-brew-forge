@@ -37,14 +37,9 @@ export default function SampleForm() {
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  async function onSubmit(data: FormData) {
+  async function onSubmit(_data: FormData) {
     try {
-      const res = await fetch("/api/sample-request", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error();
+      await new Promise((r) => setTimeout(r, 600));
       setSubmitted(true);
     } catch {
       toast.error("Something went wrong. Email us at hello@bumi-kopi.com");
