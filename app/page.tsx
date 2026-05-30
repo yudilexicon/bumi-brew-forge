@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SplitWords, { Reveal } from "@/components/SplitWords";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const stats = [
@@ -42,36 +43,53 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="min-h-screen flex flex-col justify-center bg-[#1e1b18] pt-16">
-          <div className="max-w-7xl mx-auto px-6 py-24">
-            <p className="font-[family-name:var(--font-mono)] text-xs text-[#8a8278] tracking-[0.2em] uppercase mb-6">
-              B2B Green Coffee Export · West Java, Indonesia
-            </p>
+        <section className="min-h-screen flex flex-col justify-center bg-[#1e1b18] pt-16 relative overflow-hidden">
+          {/* moss glow */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-40 -right-40 w-[720px] h-[720px] rounded-full opacity-[0.18] blur-[120px]"
+            style={{ background: "radial-gradient(circle, #8fa86a 0%, transparent 70%)" }}
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-40 -left-40 w-[520px] h-[520px] rounded-full opacity-[0.12] blur-[120px]"
+            style={{ background: "radial-gradient(circle, #c44b1a 0%, transparent 70%)" }}
+          />
+          <div className="max-w-7xl mx-auto px-6 py-24 relative">
+            <Reveal>
+              <p className="font-[family-name:var(--font-mono)] text-xs text-[#8fa86a] tracking-[0.2em] uppercase mb-6">
+                B2B Green Coffee Export · West Java, Indonesia
+              </p>
+            </Reveal>
             <h1 className="font-[family-name:var(--font-display)] font-extrabold text-5xl md:text-7xl lg:text-8xl text-[#faf8f4] leading-[0.92] tracking-tight uppercase mb-8 max-w-4xl">
-              Indonesian<br />
-              green beans.<br />
-              <span className="text-[#c44b1a]">Processed<br />
-              in-house.</span><br />
-              Ready to ship.
+              <SplitWords as="span" className="block">{"Indonesian"}</SplitWords>
+              <SplitWords as="span" className="block" delay={0.1}>{"green beans."}</SplitWords>
+              <SplitWords as="span" className="block" delay={0.25} highlight="processed">{"Processed in-house."}</SplitWords>
+              <SplitWords as="span" className="block" delay={0.5} highlight="in-house.">{"Processed in-house."}</SplitWords>
+              <SplitWords as="span" className="block" delay={0.7}>{"Ready to ship."}</SplitWords>
             </h1>
-            <p className="font-[family-name:var(--font-body)] text-lg text-[#c4bdb0] max-w-xl mb-10 leading-relaxed font-light">
-              We own the washing station in West Java. Exclusive access to 5 additional origins.
-              Full documentation on every lot. Volume welcome.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/request-sample"
-                className="inline-flex items-center gap-2 font-[family-name:var(--font-mono)] text-sm tracking-[0.1em] uppercase px-6 py-4 bg-[#c44b1a] text-[#faf8f4] hover:bg-[#8c3110] transition-colors"
-              >
-                Request free 5kg sample <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/catalogue"
-                className="inline-flex items-center gap-2 font-[family-name:var(--font-mono)] text-sm tracking-[0.1em] uppercase px-6 py-4 border border-[#4a4540] text-[#c4bdb0] hover:border-[#8a8278] hover:text-[#faf8f4] transition-colors"
-              >
-                View lot catalogue
-              </Link>
-            </div>
+            <Reveal delay={0.6}>
+              <p className="font-[family-name:var(--font-body)] text-lg text-[#c4bdb0] max-w-xl mb-10 leading-relaxed font-light">
+                We own the washing station in West Java. Exclusive access to 5 additional origins.
+                Full documentation on every lot. Volume welcome.
+              </p>
+            </Reveal>
+            <Reveal delay={0.75}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/request-sample"
+                  className="group inline-flex items-center gap-2 font-[family-name:var(--font-mono)] text-sm tracking-[0.1em] uppercase px-6 py-4 bg-[#c44b1a] text-[#faf8f4] hover:bg-[#8c3110] transition-all hover:gap-3"
+                >
+                  Request free 5kg sample <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/catalogue"
+                  className="inline-flex items-center gap-2 font-[family-name:var(--font-mono)] text-sm tracking-[0.1em] uppercase px-6 py-4 border border-[#4a4540] text-[#c4bdb0] hover:border-[#8fa86a] hover:text-[#faf8f4] transition-colors"
+                >
+                  View lot catalogue
+                </Link>
+              </div>
+            </Reveal>
           </div>
         </section>
 
