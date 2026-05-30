@@ -97,15 +97,17 @@ export default function Home() {
         <section className="bg-[#4a4540]/20 border-y border-[#4a4540]/40">
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((s) => (
-                <div key={s.label} className="text-center">
-                  <p className="font-[family-name:var(--font-display)] font-extrabold text-2xl text-[#faf8f4] uppercase tracking-wide">
-                    {s.value}
-                  </p>
-                  <p className="font-[family-name:var(--font-mono)] text-xs text-[#8a8278] tracking-[0.15em] uppercase mt-1">
-                    {s.label}
-                  </p>
-                </div>
+              {stats.map((s, i) => (
+                <Reveal key={s.label} delay={i * 0.08}>
+                  <div className="text-center">
+                    <p className="font-[family-name:var(--font-display)] font-extrabold text-2xl text-[#faf8f4] uppercase tracking-wide">
+                      {s.value}
+                    </p>
+                    <p className="font-[family-name:var(--font-mono)] text-xs text-[#8fa86a] tracking-[0.15em] uppercase mt-1">
+                      {s.label}
+                    </p>
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -114,14 +116,17 @@ export default function Home() {
         {/* 3 Pillars */}
         <section className="bg-[#1e1b18] py-24">
           <div className="max-w-7xl mx-auto px-6">
-            <p className="font-[family-name:var(--font-mono)] text-xs text-[#8a8278] tracking-[0.2em] uppercase mb-16">
-              Why Bumi Kopi
-            </p>
+            <Reveal>
+              <p className="font-[family-name:var(--font-mono)] text-xs text-[#8fa86a] tracking-[0.2em] uppercase mb-16">
+                Why Bumi Kopi
+              </p>
+            </Reveal>
             <div className="grid md:grid-cols-3 gap-0 border border-[#4a4540]/40">
               {pillars.map((p, i) => (
-                <div
+                <Reveal
                   key={p.number}
-                  className={`p-8 ${i < 2 ? "md:border-r border-b md:border-b-0 border-[#4a4540]/40" : ""}`}
+                  delay={i * 0.1}
+                  className={`p-8 ${i < 2 ? "md:border-r border-b md:border-b-0 border-[#4a4540]/40" : ""} transition-colors hover:bg-[#8fa86a]/[0.04]`}
                 >
                   <p className="font-[family-name:var(--font-mono)] text-xs text-[#c44b1a] tracking-[0.2em] mb-4">
                     {p.number}
@@ -132,7 +137,7 @@ export default function Home() {
                   <p className="font-[family-name:var(--font-body)] text-sm text-[#8a8278] leading-relaxed font-light">
                     {p.body}
                   </p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -141,17 +146,24 @@ export default function Home() {
         {/* Processing chain */}
         <section className="bg-[#4a4540]/10 py-24 border-y border-[#4a4540]/40">
           <div className="max-w-7xl mx-auto px-6">
-            <p className="font-[family-name:var(--font-mono)] text-xs text-[#8a8278] tracking-[0.2em] uppercase mb-4">
-              Supply chain
-            </p>
-            <h2 className="font-[family-name:var(--font-display)] font-extrabold text-3xl md:text-4xl text-[#faf8f4] uppercase tracking-tight mb-16">
+            <Reveal>
+              <p className="font-[family-name:var(--font-mono)] text-xs text-[#8fa86a] tracking-[0.2em] uppercase mb-4">
+                Supply chain
+              </p>
+            </Reveal>
+            <SplitWords
+              as="h2"
+              className="font-[family-name:var(--font-display)] font-extrabold text-3xl md:text-4xl text-[#faf8f4] uppercase tracking-tight mb-16"
+              highlight="cherry"
+            >
               From cherry to container in 5 steps
-            </h2>
+            </SplitWords>
             <div className="grid md:grid-cols-5 gap-0">
               {chain.map((c, i) => (
-                <div
+                <Reveal
                   key={c.step}
-                  className="relative p-6 border-t border-[#4a4540]/40 md:border-t-0 md:border-l first:border-t first:md:border-l-0"
+                  delay={i * 0.08}
+                  className="relative p-6 border-t border-[#4a4540]/40 md:border-t-0 md:border-l first:border-t first:md:border-l-0 transition-colors hover:bg-[#8fa86a]/[0.04]"
                 >
                   <p className="font-[family-name:var(--font-mono)] text-xs text-[#c44b1a] tracking-[0.15em] mb-3">
                     0{i + 1}
@@ -162,7 +174,7 @@ export default function Home() {
                   <p className="font-[family-name:var(--font-body)] text-xs text-[#8a8278] leading-relaxed font-light">
                     {c.detail}
                   </p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -172,13 +184,18 @@ export default function Home() {
         <section className="bg-[#1e1b18] py-24">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-3xl">
-              <p className="font-[family-name:var(--font-mono)] text-xs text-[#8a8278] tracking-[0.2em] uppercase mb-4">
-                The offer
-              </p>
-              <h2 className="font-[family-name:var(--font-display)] font-extrabold text-4xl md:text-5xl text-[#faf8f4] uppercase tracking-tight mb-8 leading-tight">
-                Try before you invoice.<br />
-                <span className="text-[#c44b1a]">Zero risk.</span>
-              </h2>
+              <Reveal>
+                <p className="font-[family-name:var(--font-mono)] text-xs text-[#8fa86a] tracking-[0.2em] uppercase mb-4">
+                  The offer
+                </p>
+              </Reveal>
+              <SplitWords
+                as="h2"
+                className="font-[family-name:var(--font-display)] font-extrabold text-4xl md:text-5xl text-[#faf8f4] uppercase tracking-tight mb-8 leading-tight"
+                highlight="zero"
+              >
+                {"Try before you invoice.\nZero risk."}
+              </SplitWords>
               <div className="space-y-4 mb-10">
                 {[
                   "We ship you a 5kg cupping sample of your chosen origin and process",
