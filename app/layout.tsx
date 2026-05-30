@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Syne, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import { Toaster } from "sonner";
-import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const syne = Syne({
@@ -51,7 +50,7 @@ export default function RootLayout({
       className={`${syne.variable} ${ibmPlexMono.variable} ${spaceGrotesk.variable}`}
     >
       <body>
-        <SmoothScroll>{children}</SmoothScroll>
+        {children}
         <Toaster theme="dark" position="bottom-right" />
       </body>
     </html>
