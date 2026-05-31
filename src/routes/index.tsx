@@ -26,6 +26,7 @@ export const Route = createFileRoute("/")({
 /* ---------------- CHERRY SCROLL — cinematic centerpiece ---------------- */
 function CherryScroll() {
   const ref = useRef<HTMLDivElement>(null);
+  useAudioFocus(ref, 1.0);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
@@ -217,6 +218,7 @@ function CherryScroll() {
 /* ---------------- PROCESS SCROLL — materials & engineering ---------------- */
 function ProcessScroll() {
   const ref = useRef<HTMLDivElement>(null);
+  useAudioFocus(ref, 0.9);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
