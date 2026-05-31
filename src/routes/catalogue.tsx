@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHeader } from "@/components/Section";
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { CherryParallax } from "@/components/motion/CherryParallax";
+import { SectionReveal } from "@/components/motion/SectionReveal";
+import { FadeUp } from "@/components/motion/WordReveal";
 
 export const Route = createFileRoute("/catalogue")({
   head: () => ({
@@ -32,21 +35,38 @@ function Catalogue() {
   const filtered = filter === "All" ? lots : lots.filter((l) => l.tier === filter);
   return (
     <>
-      <PageHeader
+      <CherryParallax
         eyebrow="Bumi Kopi · Live catalogue"
         title="Current lots. FOB Tanjung Priok."
         lede="Updated weekly. All prices in USD per kilogram, FOB. Sample of any lot available within 10 business days."
+        size="sm"
       />
-      <section className="container-x py-10 border-b border-border">
+
+      <SectionReveal className="container-x py-10 border-b border-border">
         <div className="flex flex-wrap gap-2">
-          {tiers.map((t) => (
-            <button key={t} onClick={() => setFilter(t)} className={`font-mono text-xs uppercase tracking-wider px-4 py-2 border ${filter === t ? "bg-rust border-rust text-white" : "border-border text-ash hover:border-rust hover:text-rust"}`}>
+          {tiers.map((t, i) => (
+            <motion.button
+              key={t}
+              onClick={() => setFilter(t)}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.05 }}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              className={`font-mono text-xs uppercase tracking-wider px-4 py-2 border transition-colors ${
+                filter === t
+                  ? "bg-rust border-rust text-white"
+                  : "border-border text-ash hover:border-rust hover:text-rust"
+              }`}
+            >
               {t}
-            </button>
+            </motion.button>
           ))}
         </div>
-      </section>
-      <section className="container-x py-12">
+      </SectionReveal>
+
+      <SectionReveal className="container-x py-16" focus={0.8}>
         <div className="overflow-x-auto">
           <table className="w-full text-left font-mono text-sm">
             <thead className="text-smoke uppercase text-[11px] tracking-[0.14em] border-b border-border">
@@ -58,31 +78,49 @@ function Catalogue() {
                 <th className="py-4 pr-4">Moisture</th>
                 <th className="py-4 pr-4">Q Grade</th>
                 <th className="py-4 pr-4">Available</th>
-                <th className="py-4 pr-4">FOB / kg</th>
+                <th className="py-4 pr-4">Ex or FOB / kg</th>
                 <th className="py-4"></th>
               </tr>
             </thead>
             <tbody className="text-bone">
-              {filtered.map((l) => (
-                <tr key={l.code} className="border-b border-border hover:bg-card transition-colors">
-                  <td className="py-4 pr-4 text-rust">{l.code}</td>
-                  <td className="py-4 pr-4">{l.origin}</td>
-                  <td className="py-4 pr-4">{l.method}</td>
-                  <td className="py-4 pr-4">{l.screen}</td>
-                  <td className="py-4 pr-4">{l.moisture}</td>
-                  <td className="py-4 pr-4">{l.score}</td>
-                  <td className="py-4 pr-4 text-smoke">{l.available}</td>
-                  <td className="py-4 pr-4">{l.price}</td>
-                  <td className="py-4">
-                    <Link to="/request-sample" search={{ lot: l.code } as never} className="text-rust hover:underline">Request →</Link>
-                  </td>
-                </tr>
-              ))}
+              <AnimatePresence mode="popLayout">
+                {filtered.map((l, i) => (
+                  <motion.tr
+                    key={l.code}
+                    layout
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 220,
+                      damping: 26,
+                      delay: i * 0.04,
+                    }}
+                    whileHover={{ backgroundColor: "rgba(232,224,208,0.04)" }}
+                    className="border-b border-border"
+                  >
+                    <td className="py-4 pr-4 text-rust">{l.code}</td>
+                    <td className="py-4 pr-4">{l.origin}</td>
+                    <td className="py-4 pr-4">{l.method}</td>
+                    <td className="py-4 pr-4">{l.screen}</td>
+                    <td className="py-4 pr-4">{l.moisture}</td>
+                    <td className="py-4 pr-4">{l.score}</td>
+                    <td className="py-4 pr-4 text-smoke">{l.available}</td>
+                    <td className="py-4 pr-4">{l.price}</td>
+                    <td className="py-4">
+                      <Link to="/request-sample" search={{ lot: l.code } as never} className="text-rust hover:underline">Request →</Link>
+                    </td>
+                  </motion.tr>
+                ))}
+              </AnimatePresence>
             </tbody>
           </table>
         </div>
-        <p className="mt-8 font-mono text-xs text-smoke">All lots subject to availability. Cupping report and moisture certificate included with sample. Off-spec → replaced.</p>
-      </section>
+        <FadeUp delay={0.3}>
+          <p className="mt-8 font-mono text-xs text-smoke">All lots subject to availability. Cupping report and moisture certificate included with sample. Off-spec → replaced.</p>
+        </FadeUp>
+      </SectionReveal>
     </>
   );
 }
