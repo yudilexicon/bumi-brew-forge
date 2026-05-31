@@ -7,6 +7,7 @@ import originsImg from "@/assets/origins.jpg";
 import { WordReveal, FadeUp } from "@/components/motion/WordReveal";
 import { PillButton } from "@/components/motion/PillButton";
 import { Marquee } from "@/components/motion/Marquee";
+import { useAudioFocus } from "@/components/audio/AmbientAudio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
