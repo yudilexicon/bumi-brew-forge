@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { AmbientAudioProvider, AmbientNudge } from "@/components/audio/AmbientAudio";
 
 
 function NotFoundComponent() {
@@ -114,11 +115,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col">
-        <SiteHeader />
-        <main className="flex-1"><Outlet /></main>
-        <SiteFooter />
-      </div>
+      <AmbientAudioProvider>
+        <div className="min-h-screen flex flex-col">
+          <SiteHeader />
+          <main className="flex-1"><Outlet /></main>
+          <SiteFooter />
+          <AmbientNudge />
+        </div>
+      </AmbientAudioProvider>
     </QueryClientProvider>
   );
 }

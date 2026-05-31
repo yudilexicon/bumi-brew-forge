@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { AmbientToggle } from "@/components/audio/AmbientAudio";
 
 const nav = [
   { to: "/origins", label: "Origins" },
@@ -26,9 +27,13 @@ export function SiteHeader() {
               {n.label}
             </Link>
           ))}
+          <AmbientToggle />
           <Link to="/request-sample" className="btn-primary">Request up to 1kg sample →</Link>
         </nav>
-        <button onClick={() => setOpen(!open)} className="md:hidden font-mono text-xs uppercase text-bone">{open ? "Close" : "Menu"}</button>
+        <div className="md:hidden flex items-center gap-4">
+          <AmbientToggle />
+          <button onClick={() => setOpen(!open)} className="font-mono text-xs uppercase text-bone">{open ? "Close" : "Menu"}</button>
+        </div>
       </div>
       {open && (
         <div className="md:hidden border-t border-border bg-coal">
