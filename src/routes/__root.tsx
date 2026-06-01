@@ -119,7 +119,7 @@ function RootComponent() {
       <AmbientAudioProvider>
         <div className="min-h-screen flex flex-col">
           <SiteHeader />
-          <main className="flex-1"><Outlet /></main>
+          <main className="flex-1"><PageCurtain><Outlet /></PageCurtain></main>
           <SiteFooter />
           <AmbientNudge />
         </div>
