@@ -28,12 +28,9 @@ export default async function handler(req, res) {
     if (chunks.length > 0) body = Buffer.concat(chunks);
   }
 
-  const request = new Request(url.href, {
-    method: req.method,
-    headers,
-    body,
-    duplex: 'half',
-  });
+  const requestInit = { method: req.method, headers, body };
+  if (body) requestInit.duplex = 'half';
+  const request = new Request(url.href, requestInit);
 
   const response = await server.fetch(request, {}, {});
 

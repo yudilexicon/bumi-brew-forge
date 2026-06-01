@@ -5,5 +5,10 @@
   "outputDirectory": "dist/client",
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/ssr" }
-  ]
+  ],
+  "functions": {
+    "api/ssr.mjs": {
+      "includeFiles": "dist/server/**"
+    }
+  }
 }
