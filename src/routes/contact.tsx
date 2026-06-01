@@ -21,18 +21,20 @@ function Contact() {
       />
       <section className="container-x py-20 grid lg:grid-cols-2 gap-px bg-border">
         <div className="bg-coal p-10">
-          <p className="eyebrow text-rust">General + Sales</p>
-          <h2 className="mt-4 font-display text-3xl text-bone">hello@bumi-kopi.com</h2>
-          <p className="mt-3 text-ash text-sm">Sample requests, quotations, FCL contract enquiries.</p>
-          <p className="mt-6 font-mono text-bone">+62 821 1500 0140</p>
-          <p className="font-mono text-smoke text-xs">Mon – Fri · 08:00 – 17:00 WIB (GMT+7)</p>
+          <p className="eyebrow text-rust">All inquiries · Email</p>
+          <h2 className="mt-4 font-display text-3xl text-bone">
+            <a href="mailto:hello@bumi-kopi.com" className="hover:text-rust transition-colors">hello@bumi-kopi.com</a>
+          </h2>
+          <p className="mt-3 text-ash text-sm">Sample requests, quotations, FCL contracts, shipment status, documentation — one inbox for everything.</p>
+          <p className="font-mono text-smoke text-xs mt-6">Replies Mon – Fri · 08:00 – 17:00 WIB (GMT+7)</p>
         </div>
         <div className="bg-coal p-10">
-          <p className="eyebrow text-rust">Operations + Logistics</p>
-          <h2 className="mt-4 font-display text-3xl text-bone">ops@bumi-kopi.com</h2>
-          <p className="mt-3 text-ash text-sm">Shipment status, documentation, port handling, FCL scheduling.</p>
-          <p className="mt-6 font-mono text-bone">Tanjung Priok export desk</p>
-          <p className="font-mono text-smoke text-xs">Container loadings: Tue, Thu, Sat</p>
+          <p className="eyebrow text-rust">WhatsApp · Direct</p>
+          <h2 className="mt-4 font-display text-3xl text-bone">
+            <a href="https://wa.me/6285726666677" target="_blank" rel="noopener noreferrer" className="hover:text-rust transition-colors">+62 857 2666 6677</a>
+          </h2>
+          <p className="mt-3 text-ash text-sm">Fastest channel for urgent shipment and sample questions.</p>
+          <a href="https://wa.me/6285726666677" target="_blank" rel="noopener noreferrer" className="btn-ghost mt-6 inline-flex">Open WhatsApp →</a>
         </div>
       </section>
 

@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AmbientAudioProvider, AmbientNudge } from "@/components/audio/AmbientAudio";
+import { PageCurtain } from "@/components/motion/PageCurtain";
 
 
 function NotFoundComponent() {
@@ -118,7 +119,7 @@ function RootComponent() {
       <AmbientAudioProvider>
         <div className="min-h-screen flex flex-col">
           <SiteHeader />
-          <main className="flex-1"><Outlet /></main>
+          <main className="flex-1"><PageCurtain><Outlet /></PageCurtain></main>
           <SiteFooter />
           <AmbientNudge />
         </div>

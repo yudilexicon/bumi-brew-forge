@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useSpring, useTransform } from "motion/react";
 import { useRef, type ReactNode } from "react";
 import { useAudioFocus } from "@/components/audio/AmbientAudio";
+import { SPRING_SECTION, SPRING_DRIFT, REVEAL_MARGIN, REVEAL_EASE } from "./springs";
 
 /**
  * Wraps a section with a spring-driven scroll reveal:
@@ -21,14 +22,14 @@ export function SectionReveal({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useAudioFocus(ref, focus);
-  const inView = useInView(ref, { once: true, margin: "-15% 0px -15% 0px" });
+  const inView = useInView(ref, { once: true, margin: REVEAL_MARGIN });
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const p = useSpring(scrollYProgress, { stiffness: 60, damping: 22 });
+  const p = useSpring(scrollYProgress, SPRING_SECTION);
   const y = useTransform(p, [0, 1], [`${30 * intensity}px`, `${-30 * intensity}px`]);
-  const scale = useTransform(p, [0, 0.5, 1], [0.98, 1, 0.99]);
+  const scale = useTransform(p, [0, 0.5, 1], [0.985, 1, 0.99]);
 
   return (
     <motion.section
@@ -37,7 +38,7 @@ export function SectionReveal({
       style={{ y, scale }}
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : {}}
-      transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 1.0, ease: [...REVEAL_EASE] }}
     >
       {children}
     </motion.section>
@@ -62,7 +63,7 @@ export function CherryDrift({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const p = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
+  const p = useSpring(scrollYProgress, SPRING_DRIFT);
   const y = useTransform(p, [0, 1], ["-30%", "30%"]);
   const rotate = useTransform(p, [0, 1], [-15, 25]);
   const scale = useTransform(p, [0, 0.5, 1], [0.85, 1.05, 0.9]);

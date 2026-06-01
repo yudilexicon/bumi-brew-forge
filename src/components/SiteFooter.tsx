@@ -31,6 +31,7 @@ export function SiteFooter() {
             <li><Link to="/request-sample" className="text-ash hover:text-rust">Request sample</Link></li>
             <li><Link to="/contact" className="text-ash hover:text-rust">Contact</Link></li>
             <li><a href="mailto:hello@bumi-kopi.com" className="text-ash hover:text-rust">hello@bumi-kopi.com</a></li>
+            <li><a href="https://wa.me/6285726666677" target="_blank" rel="noopener noreferrer" className="text-ash hover:text-rust">WhatsApp +62 857 2666 6677</a></li>
           </ul>
         </div>
         <div className="md:col-span-4 border-t border-border pt-8 mt-2 grid md:grid-cols-12 gap-6 items-center">
