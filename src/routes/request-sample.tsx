@@ -71,9 +71,9 @@ function RequestSample() {
             </ul>
           </div>
           <div className="border border-border p-8">
-            <p className="eyebrow">Operations contact</p>
-            <p className="mt-3 font-mono text-bone">hello@bumi-kopi.com</p>
-            <p className="font-mono text-smoke text-sm mt-1">+62 821 1500 0140</p>
+            <p className="eyebrow">Contact</p>
+            <p className="mt-3 font-mono text-bone"><a href="mailto:hello@bumi-kopi.com" className="hover:text-rust">hello@bumi-kopi.com</a></p>
+            <p className="font-mono text-smoke text-sm mt-1"><a href="https://wa.me/6285726666677" target="_blank" rel="noopener noreferrer" className="hover:text-rust">WhatsApp · +62 857 2666 6677</a></p>
             <p className="mt-4 text-sm text-ash">Bandung · West Java · Indonesia</p>
           </div>
         </aside>
