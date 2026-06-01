@@ -63,7 +63,7 @@ export function CherryDrift({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const p = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
+  const p = useSpring(scrollYProgress, SPRING_DRIFT);
   const y = useTransform(p, [0, 1], ["-30%", "30%"]);
   const rotate = useTransform(p, [0, 1], [-15, 25]);
   const scale = useTransform(p, [0, 0.5, 1], [0.85, 1.05, 0.9]);
