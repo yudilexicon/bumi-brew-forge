@@ -22,14 +22,14 @@ export function SectionReveal({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useAudioFocus(ref, focus);
-  const inView = useInView(ref, { once: true, margin: "-15% 0px -15% 0px" });
+  const inView = useInView(ref, { once: true, margin: REVEAL_MARGIN });
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const p = useSpring(scrollYProgress, { stiffness: 60, damping: 22 });
+  const p = useSpring(scrollYProgress, SPRING_SECTION);
   const y = useTransform(p, [0, 1], [`${30 * intensity}px`, `${-30 * intensity}px`]);
-  const scale = useTransform(p, [0, 0.5, 1], [0.98, 1, 0.99]);
+  const scale = useTransform(p, [0, 0.5, 1], [0.985, 1, 0.99]);
 
   return (
     <motion.section
