@@ -25,7 +25,7 @@ export function CherryParallax({ eyebrow, title, lede, size = "md" }: CherryPara
     target: ref,
     offset: ["start start", "end start"],
   });
-  const p = useSpring(scrollYProgress, { stiffness: 70, damping: 22, mass: 0.6 });
+  const p = useSpring(scrollYProgress, SPRING_HERO);
 
   const scale = useTransform(p, [0, 1], [1, 1.45]);
   const rotate = useTransform(p, [0, 1], [-4, 6]);
