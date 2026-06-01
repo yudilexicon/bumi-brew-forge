@@ -38,7 +38,7 @@ export function SectionReveal({
       style={{ y, scale }}
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : {}}
-      transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 1.0, ease: [...REVEAL_EASE] }}
     >
       {children}
     </motion.section>
