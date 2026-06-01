@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useSpring, useTransform } from "motion/react";
 import { useRef, type ReactNode } from "react";
 import { useAudioFocus } from "@/components/audio/AmbientAudio";
+import { SPRING_SECTION, SPRING_DRIFT, REVEAL_MARGIN, REVEAL_EASE } from "./springs";
 
 /**
  * Wraps a section with a spring-driven scroll reveal:
