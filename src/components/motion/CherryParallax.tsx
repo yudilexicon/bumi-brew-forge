@@ -3,6 +3,7 @@ import { useRef } from "react";
 import cherryImg from "@/assets/cherry.jpg";
 import { WordReveal } from "./WordReveal";
 import { useAudioFocus } from "@/components/audio/AmbientAudio";
+import { SPRING_HERO } from "./springs";
 
 interface CherryParallaxProps {
   eyebrow: string;
